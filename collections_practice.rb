@@ -113,10 +113,9 @@ array = [{:name => "blake"}, {:name => "blake"}, {:name => "ashley"}]
    data_hash = data[0]
    counter = 0
    keys.each do |keys_element|
-     merge_data << keys_element
      data_hash.each do |data_hash_key, data_hash_value|
        if data_hash_key == keys_element[:first_name]
-         merge_data[counter] = merge_data[counter].merge(data_hash_value)
+         merge_data[counter] = keys_element.merge(data_hash_value)
       end
       end
       counter = counter + 1
